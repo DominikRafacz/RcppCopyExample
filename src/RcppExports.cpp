@@ -6,12 +6,12 @@
 using namespace Rcpp;
 
 // do_sth
-IntegerVector do_sth(IntegerVector& some_vector);
+IntegerVector do_sth(IntegerVector some_vector);
 RcppExport SEXP _RcppCopyExample_do_sth(SEXP some_vectorSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< IntegerVector& >::type some_vector(some_vectorSEXP);
+    Rcpp::traits::input_parameter< IntegerVector >::type some_vector(some_vectorSEXP);
     rcpp_result_gen = Rcpp::wrap(do_sth(some_vector));
     return rcpp_result_gen;
 END_RCPP

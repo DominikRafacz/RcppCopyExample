@@ -4,7 +4,7 @@ using namespace Rcpp;
 
 //' @export
 //[[Rcpp::export]]
-IntegerVector do_sth(IntegerVector& some_vector) {
+IntegerVector do_sth(IntegerVector some_vector) {
   some_vector[0] = 12345;
   return some_vector;
 }
