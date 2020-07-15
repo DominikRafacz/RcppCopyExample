@@ -6,12 +6,12 @@
 using namespace Rcpp;
 
 // do_sth
-IntegerVector do_sth(IntegerVector some_vector);
+IntegerVector do_sth(IntegerVector& some_vector);
 RcppExport SEXP _RcppCopyExample_do_sth(SEXP some_vectorSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< IntegerVector >::type some_vector(some_vectorSEXP);
+    Rcpp::traits::input_parameter< IntegerVector& >::type some_vector(some_vectorSEXP);
     rcpp_result_gen = Rcpp::wrap(do_sth(some_vector));
     return rcpp_result_gen;
 END_RCPP
@@ -27,10 +27,34 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// create_vector_list_with_one_modification
+List create_vector_list_with_one_modification(IntegerVector v);
+RcppExport SEXP _RcppCopyExample_create_vector_list_with_one_modification(SEXP vSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type v(vSEXP);
+    rcpp_result_gen = Rcpp::wrap(create_vector_list_with_one_modification(v));
+    return rcpp_result_gen;
+END_RCPP
+}
+// create_vector_list_with_two_modifications
+List create_vector_list_with_two_modifications(IntegerVector v);
+RcppExport SEXP _RcppCopyExample_create_vector_list_with_two_modifications(SEXP vSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type v(vSEXP);
+    rcpp_result_gen = Rcpp::wrap(create_vector_list_with_two_modifications(v));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppCopyExample_do_sth", (DL_FUNC) &_RcppCopyExample_do_sth, 1},
     {"_RcppCopyExample_do_sth_more", (DL_FUNC) &_RcppCopyExample_do_sth_more, 1},
+    {"_RcppCopyExample_create_vector_list_with_one_modification", (DL_FUNC) &_RcppCopyExample_create_vector_list_with_one_modification, 1},
+    {"_RcppCopyExample_create_vector_list_with_two_modifications", (DL_FUNC) &_RcppCopyExample_create_vector_list_with_two_modifications, 1},
     {NULL, NULL, 0}
 };
 

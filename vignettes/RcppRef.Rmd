@@ -31,4 +31,14 @@ b <- list(1, 2, 3)
 b
 RcppCopyExample:::do_sth_more(b)
 b
+
+# multiple
+x <- c(0, 0, 0)
+RcppCopyExample::create_vector_list_with_one_modification(x)
+x
+
+#even more multiple
+x <- c(0, 0, 0)
+RcppCopyExample::create_vector_list_with_two_modifications(x)
+x
 ```
