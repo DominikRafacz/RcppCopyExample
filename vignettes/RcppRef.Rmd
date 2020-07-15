@@ -41,4 +41,10 @@ x
 x <- c(0, 0, 0)
 RcppCopyExample::create_vector_list_with_two_modifications(x)
 x
+
+# add attributes
+x <- c(1,2,3)
+x
+RcppCopyExample::add_attr(x)
+x
 ```

@@ -21,3 +21,8 @@ create_vector_list_with_two_modifications <- function(v) {
     .Call(`_RcppCopyExample_create_vector_list_with_two_modifications`, v)
 }
 
+#' @export
+add_attr <- function(v) {
+    .Call(`_RcppCopyExample_add_attr`, v)
+}
+

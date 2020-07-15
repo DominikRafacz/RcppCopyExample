@@ -49,12 +49,24 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// add_attr
+IntegerVector add_attr(IntegerVector v);
+RcppExport SEXP _RcppCopyExample_add_attr(SEXP vSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< IntegerVector >::type v(vSEXP);
+    rcpp_result_gen = Rcpp::wrap(add_attr(v));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppCopyExample_do_sth", (DL_FUNC) &_RcppCopyExample_do_sth, 1},
     {"_RcppCopyExample_do_sth_more", (DL_FUNC) &_RcppCopyExample_do_sth_more, 1},
     {"_RcppCopyExample_create_vector_list_with_one_modification", (DL_FUNC) &_RcppCopyExample_create_vector_list_with_one_modification, 1},
     {"_RcppCopyExample_create_vector_list_with_two_modifications", (DL_FUNC) &_RcppCopyExample_create_vector_list_with_two_modifications, 1},
+    {"_RcppCopyExample_add_attr", (DL_FUNC) &_RcppCopyExample_add_attr, 1},
     {NULL, NULL, 0}
 };
 
