@@ -11,3 +11,18 @@ do_sth_more <- function(some_list) {
     .Call(`_RcppCopyExample_do_sth_more`, some_list)
 }
 
+#' @export
+create_vector_list_with_one_modification <- function(v) {
+    .Call(`_RcppCopyExample_create_vector_list_with_one_modification`, v)
+}
+
+#' @export
+create_vector_list_with_two_modifications <- function(v) {
+    .Call(`_RcppCopyExample_create_vector_list_with_two_modifications`, v)
+}
+
+#' @export
+add_attr <- function(v) {
+    .Call(`_RcppCopyExample_add_attr`, v)
+}
+
